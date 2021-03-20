@@ -40,14 +40,15 @@ const HSLcolorFactory = {
     offset: 30,
     saturation: 100,
     luminocity: 65,
-    hue: this.getRandomNumber(this.hueMin, this.hueMax),
-    antihue: (this.hue + 180) % this.hueMax,
+    hue: undefined,
+    antihue: undefined,
 
     createRandomColor(){
+        this.hue = typeof this.hue == "undefined" ? this.getRandomNumber(this.hueMin, this.hueMax) : this.hue;
         const min = this.hue + this.offset;
         const max = min + this.hueMax - (2 * this.offset);
         this.hue = this.getRandomNumber(min, max) % this.hueMax;
-        this.antihue = (newHue + 180) % this.hueMax;
+        this.antihue = (this.hue + 180) % this.hueMax;
     },
 
     getHSL(){
