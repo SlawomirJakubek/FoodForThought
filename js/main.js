@@ -23,45 +23,47 @@ $(document).on('click', () => {
 
 function setColors(){
     HSLcolorFactory.createRandomColor();
-    $('#themeColor').attr('content', HSLcolorFactory.getHSLString());
+    $('#themeColor').attr('content', HSLcolorFactory.getHSL());
 
     let main = document.getElementsByTagName('main')[0];
 
-    let top = bottom = HSLcolorFactory.getHSLString();
-    let middle = HSLcolorFactory.getDarkerHSLString();
+    let top = bottom = HSLcolorFactory.getHSL();
+    let middle = HSLcolorFactory.getDarkerHSL();
     main.style.backgroundImage = `linear-gradient(${top} 0%, ${middle} 50%, ${bottom} 100%)`;
     
-    $thought.css('backgroundColor', HSLcolorFactory.getAntiColorAsHSLString());
+    $thought.css('backgroundColor', HSLcolorFactory.getAntiHSL());
 }
 
 const HSLcolorFactory = {
     hueMin: 0,
-    hueMax: 348,
-    hue: 0,
-    antihue: 0,
+    hueMax: 359,
+    offset: 30,
     saturation: 100,
     luminocity: 65,
+    hue: this.getRandomNumber(this.hueMin, this.hueMax),
+    antihue: (this.hue + 180) % this.hueMax,
 
     createRandomColor(){
-        this.hue = this.antihue = this.getRandomNumber();
-        this.antihue += 120;
-        this.antihue = this.antihue > this.hueMax ? this.antihue % this.hueMax : this.antihue;
+        const min = this.hue + this.offset;
+        const max = min + this.hueMax - (2 * this.offset);
+        this.hue = this.getRandomNumber(min, max) % this.hueMax;
+        this.antihue = (newHue + 180) % this.hueMax;
     },
 
-    getHSLString(){
+    getHSL(){
         return `hsl(${this.hue}, ${this.saturation}%, ${this.luminocity}%)`;
     },
 
-    getDarkerHSLString(){
+    getDarkerHSL(){
         const darkerLuminocity = this.luminocity - 45;
         return `hsl(${this.hue}, ${this.saturation}%, ${darkerLuminocity < 0 ? 0 : darkerLuminocity}%)`;
     },
 
-    getAntiColorAsHSLString(){
+    getAntiHSL(){
         return `hsl(${this.antihue}, ${this.saturation}%, ${this.luminocity}%)`;
     },
 
-    getRandomNumber(min = this.hueMin, max = this.hueMax) {
+    getRandomNumber(min, max) {
         const n = Math.floor(Math.random() * (max - min) ) + min;
         return n;
     }
