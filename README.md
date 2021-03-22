@@ -11,5 +11,6 @@ A simple app displaying something to think about
 
 ## How to run it
 
-The project is live and you can see it
-@ [foodforthought.jakubek.co.uk](http://foodforthought.jakubek.co.uk)
+The project is live and you can see it @
+* [foodforthought.jakubek.co.uk](http://foodforthought.jakubek.co.uk)
+* [slawomirjakubek.github.io/FoodForThought](https://slawomirjakubek.github.io/FoodForThought/)
