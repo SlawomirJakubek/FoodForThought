@@ -3,7 +3,8 @@ const thoughts = [
     "One of the costs of forgetting is that you don't remember what you lost",
     "A pathological liar is unable to admit to his problem, because that would render him a truth-teller",
     "There are some things that cannot be done by oneself, like sacrifice or love.<br/>That is why we need each other",
-    "How much time do you invest to be in peace?<br/>But isn't it what you really whant?"
+    "How much time do you invest to be in peace?<br/>But isn't it what you really whant?",
+    "It is extremely dangerous that humanity's growth in power outdistanced its growth in compassion"
 ];
 
 let index = Math.floor(Math.random() * thoughts.length);
