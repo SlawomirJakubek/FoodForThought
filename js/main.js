@@ -18,7 +18,6 @@ $(document).on('click', () => {
     }
     lastIndex = index;
     $thought.html(thoughts[index]);
-    setTop();
     setColors();
 });
 
@@ -71,16 +70,7 @@ const HSLcolorFactory = {
     }
 }
 
-function setTop(){
-    let windowHeight  = window.innerHeight;
-    let thoughtHeight = $thought.height();
-    let thoughtTop = (windowHeight / 2) - (thoughtHeight / 2);
-    $thought.css('top', thoughtTop + 'px');
-}
-
-$(window).on('resize', setTop);
 $(window).on('load', () => {
     $thought.html(thoughts[index]);
-    setTop();
     setColors();
 });
