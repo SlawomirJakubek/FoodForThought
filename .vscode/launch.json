@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "pwa-chrome",
+            "name": "http://192.168.1.34/foodforthought/",
+            "request": "launch",
+            "url": "http://192.168.1.34/foodforthought/"
+        }
+    ]
+}

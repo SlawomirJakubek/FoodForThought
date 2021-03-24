@@ -3,41 +3,75 @@
     src: url(../font/BadScript-Regular.ttf);
 }
 
-html, body, main{
+:root{
+    --thoughtContainerSmallFontSize: 2.5rem;
+    --thoughtContainerBigFontSize: 4rem;
+    --thoughtContainerCurrentFontSize: var(--thoughtContainerSmallFontSize);
+    --customFontSize: 0;
+}
+
+html, body{
     width: 100%;
     height: 100%;
 }
 
-main{
+body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 1s;
+}
+
+.thoughtContainer{
+    font-family: 'Bad Script';
+    font-size: var(--thoughtContainerCurrentFontSize);
+    user-select: none;
+    box-shadow: .1rem .1rem 1rem .1rem black;
+    width: 100%;
+    display: none;
 }
 
 p{
-    font-family: 'Bad Script';
-    font-size: 2.5rem;
-    user-select: none;
-    text-align: center;
     margin: 0px;
     padding: 0px 5%;
     width: 90%;
-    line-height: 140%;
-    box-shadow: .1rem .1rem 1rem .1rem black;
+    transition: background-color 1s, height 1s;
 }
 
-@media only screen and (min-width: 480px){
-    p{
-        font-size: 3rem;
-    }
+#thought{
+    text-align: center;
+    line-height: 1.4em;
+    padding-top: .4em;
+    padding-bottom: .4em;
 }
-@media only screen and (min-width: 1024px){
-    p{
-        font-size: 4rem;
-    }
+
+#author{
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
 }
-@media only screen and (min-width: 1600px){
-    p{
-        font-size: 5rem;
+#sign{
+    font-family: Garamond, 'Times New Roman', Times, serif;
+    font-size: .35em;
+    padding-top: .4em;
+    padding-bottom: .4em;
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+.customFontSize{
+    font-size: var(--customFontSize);
+}
+
+@media only screen and (min-width: 1000px){
+    :root{
+        --thoughtContainerCurrentFontSize: var(--thoughtContainerBigFontSize);
+    }
+    
+    #sign{
+        padding-top: .3em;
+        padding-bottom: .1em;
+        font-size: .5em;
     }
 }
