@@ -28,7 +28,7 @@ const thoughts = {
         author: "Slawomir Jakubek",
         sign: "S.J.",
         link: "https://jakubek.co.uk",
-        content: "How much time do you invest to be in peace?<br/>But isn't it what you really whant?"
+        content: "How much time do you invest to be in peace?<br/>But isn't it what you really want?"
     },
     {
         author: "Slawomir Jakubek",
@@ -46,7 +46,7 @@ const thoughts = {
         author: "Slawomir Jakubek",
         sign: "S.J.",
         link: "https://jakubek.co.uk",
-        content: "You will never win with ego in argument, because thinking is its domain. It wants you to believe in what it says, so it starts with complimenting you and telling you the truth. When you believe its compliments you give it your faith. Later it uses that faith against you by making you believe its lies"
+        content: "You will never win with ego in an argument, because the more you argue the more you weaken."
     },
     {
         author: "Slawomir Jakubek",
@@ -59,6 +59,12 @@ const thoughts = {
         sign: "Old Dying King",
         link: "https://jakubek.co.uk",
         content: "You receive faith according to your sacrifice"
+    },
+    {
+        author: "Slawomir Jakubek",
+        sign: "S.J.",
+        link: "https://jakubek.co.uk",
+        content: "If you don't yet know what is your purpose, then just take care of somebody; whoever you are able to."
     },
     {
         author: "unknown",
